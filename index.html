@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love</title>
+    <style>
+        #target {
+            position: absolute;
+            left: 100px;
+            background-color: rgb(0, 89, 255);
+            width: 90px;
+            border: none;
+            border-radius: 10px;
+            font-size: 25px;
+            padding: 8px;
+            cursor: pointer;
+            transition: top 0.5s, left 0.5s;
+        }
+
+        #game-con{
+            position: relative;
+            width: 500px;
+            height: 540px;
+            border: 2px solid #333;
+            margin: 5px;
+            overflow: hidden;
+            background-color: pink;
+        }
+
+        #Yes{
+            position: absolute;
+            right: 100px;
+            background-color: rgb(255, 0, 0);
+            width: 90px;
+            border: none;
+            border-radius: 10px;
+            font-size: 25px;
+            padding: 8px;
+        }
+
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <div id="game-con">
+        <div class="box">
+            <h1><I>Do You Love Me💖!</I></h1>
+            <button id="target">No</button>
+            <button id="Yes" onclick="alert('Love You too 🤩💕')">Yes</button>
+        </div>
+    </div>
+</center>
+    <script>
+        const target = document.getElementById('target');
+
+        function moveTarget() {
+            const maxwidth = 400;
+            const maxheight = 400;
+
+            const randomx = Math.floor(Math.random() * maxwidth);
+            const randomy = Math.floor(Math.random() * maxheight);
+
+            target.style.left = randomx + 'px';
+            target.style.top = randomy + 'px';
+        };
+
+        target.addEventListener("mouseenter", function() {
+            moveTarget();
+        });
+
+        // target.addEventListener('mouseenter', function() (
+        //     moveTarget()
+        // ));
+    </script>
+</body>
+</html>
